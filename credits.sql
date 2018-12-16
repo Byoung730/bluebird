@@ -9,9 +9,10 @@ CREATE TABLE credits (
   utilities FLOAT,
   upkeep FLOAT,
   miscellaneous FLOAT,
-  transaction_out_date DATE,
-  FOREIGN KEY (person_id) references people (person_id)
+  created_at DATE,
+  updated_at DATE
+  -- FOREIGN KEY (person_id) references people (person_id)
 );
 
-INSERT INTO credits (person_id, salaries, utilities, upkeep, miscellaneous, transaction_out_date)
+INSERT INTO credits (person_id, salaries, utilities, upkeep, miscellaneous, created_at)
   VALUES (1, 0, 50.00, 0, 0, '2018-02-03');

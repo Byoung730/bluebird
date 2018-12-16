@@ -6,7 +6,7 @@ CREATE TYPE marital_status AS ENUM ('single', 'engaged', 'married', 'divorced', 
 CREATE TABLE people  (
   person_id SERIAL PRIMARY KEY,
   email VARCHAR UNIQUE,
-  first_name VARCHAR,
+  first_name VARCHAR NOT NULL,
   last_name VARCHAR NOT NULL,
   address VARCHAR,
   phone VARCHAR,
@@ -20,7 +20,9 @@ CREATE TABLE people  (
   marital_status marital_status,
   number_private BOOLEAN,
   allow_texts BOOLEAN,
-  allow_email BOOLEAN
+  allow_email BOOLEAN,
+  created_at DATE,
+  updated_at DATE
 );
 
 INSERT INTO people  (email, first_name, last_name, address, phone)
